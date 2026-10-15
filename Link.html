@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Link.cc - 项目服务已停止</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    min-height:100vh;
+    background:#11141a;
+    /* 楷体，Windows自带，离线可用，页面全部文字统一生效 */
+    font-family: "KaiTi", "STKaiti", serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+}
+.card{
+    max-width:620px;
+    width:100%;
+    background:#191d26;
+    border-radius:16px;
+    padding:48px 36px;
+    text-align:center;
+    border:1px solid #272c38;
+}
+
+/* 通用淡入动画 */
+.fade-item{
+    opacity:0;
+    animation: textFade 0.7s ease-out forwards;
+}
+@keyframes textFade {
+    to {opacity:1;}
+}
+
+h1{
+    font-size:32px;
+    color:#fff;
+    margin-bottom:28px;
+    animation-delay:0.4s;
+    font-weight:600;
+    letter-spacing:2px;
+}
+.p1{animation-delay:0.6s;}
+.p2{animation-delay:0.8s;}
+.divider{
+    width:80px;
+    height:2px;
+    background:#323846;
+    margin:32px auto;
+    animation-delay:1.0s;
+}
+.highlight{
+    color:#f8b454;
+    font-weight:500;
+    animation-delay:1.2s;
+    font-size:19px;
+    letter-spacing:1px;
+}
+.note1{animation-delay:1.4s;}
+.note2{animation-delay:1.6s;}
+.note3{animation-delay:1.8s;}
+.note4{animation-delay:2.0s;}
+.note5{animation-delay:2.2s;}
+.btn{
+    animation-delay:2.4s;
+}
+.tip-text{
+    animation-delay:2.6s;
+}
+.footer-text{
+    animation-delay:2.8s;
+}
+
+p{
+    font-size:17px;
+    line-height:1.8;
+    color:#c2c7d3;
+    margin-bottom:16px;
+    font-weight:400;
+}
+.footer-text{
+    margin-top:20px;
+    font-size:15px;
+    color:#888e9b;
+}
+.small-note{
+    font-size:14px;
+    color:#888e9b;
+    margin-top:12px;
+    line-height:1.7;
+}
+/* 按钮样式 */
+.btn{
+    display:inline-block;
+    margin-top:28px;
+    padding:14px 32px;
+    background:#2b3240;
+    border:1px solid #444b5a;
+    color:#f8b454;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+    transition: all 0.25s ease;
+    font-family: inherit;
+}
+.btn:hover{
+    background:#353c4c;
+    border-color:#f8b454;
+}
+.tip-text{
+    margin-top:14px;
+    font-size:13px;
+    color:#777d8a;
+}
+</style>
+</head>
+<body>
+<div class="card">
+    <h1 class="fade-item">Link.cc</h1>
+    <p class="fade-item p1">Link.cc 目前已停止所有项目服务。</p>
+    <p class="fade-item p2">往后不会再有新的项目出现或更新维护。</p>
+    <div class="divider fade-item"></div>
+    <p class="highlight fade-item">不要辜负 Link.cc 的付出</p>
+    <p class="small-note fade-item note1">所有曾经搭建的服务、资源与脚本不再持续维护，相关功能会逐步失效。</p>
+    <p class="small-note fade-item note2">故事到此落幕，项目留存回忆，不再奔赴新的旅程。</p>
+    <p class="small-note fade-item note3">感谢每一位曾经驻足、信任与相伴的人。</p>
+    <p class="small-note fade-item note4">本次放出的旧版项目仅作为历史留存，仅供纪念。</p>
+    <p class="small-note fade-item note5">项目不会进行任何漏洞修复、功能新增与兼容性适配。</p>
+    <p class="small-note fade-item" style="animation-delay:2.3s">请理性使用，一切后果由使用者自行承担。</p>
+
+    <button class="btn fade-item" onclick="downloadFile()">获取旧版源码</button>
+    <p class="tip-text fade-item">⚠️ 下载项目内含 .lua 脚本与 .txt 说明文件，项目无任何后续修复与技术支持</p>
+
+    <p class="footer-text fade-item">就此别过，愿各自安好</p>
+</div>
+
+<script>
+// =========配置这里=========
+// 本地使用：压缩包 archive.zip 和 index.html 放在同一个文件夹
+// zip里面放入你的所有lua脚本、txt文本文件
+// 线上部署：把index.html和archive.zip一起上传到Cloudflare Pages
+const fileUrl = "./archive.zip";
+// 下载保存文件名
+const saveName = "Link.cc_旧版源码.zip";
+
+function downloadFile(){
+    const a = document.createElement("a");
+    a.href = fileUrl;
+    document.body.appendChild(a);
+    a.download = saveName;
+    a.click();
+    a.remove();
+}
+</script>
+</body>
+</html>
